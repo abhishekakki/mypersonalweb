@@ -1,0 +1,45 @@
+.example-spacer {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: cadetblue;
+}
+
+.mat-toolbar a {
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.welcome-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.3s ease-in-out;
+    animation: welcomeAnimation 2s forwards;
+    background: linear-gradient(45deg, #e93131, #209da1);
+}
+
+@keyframes welcomeAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+        display: none;
+    }
+
+    99% {
+        transform: scale(20);
+        opacity: 1;
+        display: block;
+    }
+
+    100% {
+        display: none;
+    }
+}
