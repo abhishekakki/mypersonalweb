@@ -1,21 +1,16 @@
-<mat-toolbar>
-    <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/projects">Projects</a>
-    <a routerLink="/about">About</a>
-    <div class="example-spacer">
-    </div>
-    <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar>
-<div class="welcome-icon">
-    <h1>Welcome</h1>
-</div>
+<div class="app">
+    <mat-toolbar>
+        <mat-tab-group (selectedTabChange)="onTabChange($event)">
+            <mat-tab label="Home"></mat-tab>
+            <mat-tab label="Projects"></mat-tab>
+            <mat-tab label="About"></mat-tab>
+            <mat-tab label="Social Links"></mat-tab>
+        </mat-tab-group>
 
-<router-outlet></router-outlet>
+    </mat-toolbar>
+    <div class="welcome-icon">
+        <h1>Welcome</h1>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

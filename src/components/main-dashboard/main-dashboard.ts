@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main-dashboard',
-  imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, RouterOutlet],
+  imports: [MatToolbarModule, MatTabsModule, RouterOutlet],
   templateUrl: './main-dashboard.html',
   styleUrl: './main-dashboard.scss'
 })
 export class MainDashboard {
 
+  constructor(private router: Router) {}
+
+  onTabChange(event: any) {
+    // Navigate to the selected tab's route
+    this.router.navigate([event.tab.textLabel]);
+  }
 }
